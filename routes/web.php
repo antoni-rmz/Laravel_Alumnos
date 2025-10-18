@@ -6,10 +6,16 @@ use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
+use App\Http\Controllers\AlumnosController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/alumnos/create', [AlumnosController::class, 'create'])->name('alumnos.create');
+Route::get('/alumnos', [AlumnosController::class, 'index'])->name('alumnos.index');
+Route::post('/alumnos', [AlumnosController::class, 'store'])->name('alumnos.store');
+Route::delete('/alumnos/{alumnos}', [AlumnosController::class, 'destroy'])->name('alumnos.destroy');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

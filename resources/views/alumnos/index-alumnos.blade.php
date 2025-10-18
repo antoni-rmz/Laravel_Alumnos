@@ -8,6 +8,7 @@
 <body>
     <h1>Lista de Alumnos</h1>
     <a href="{{ route('alumnos.create') }}">Registrar nuevo alumno</a>
+    @if ($alumnos->count() > 0)
     <table border="1">
         <thead>
             <tr>
@@ -28,9 +29,19 @@
                 <td>{{ $alumno->fecha_nacimiento }}</td>
                 <td>{{ $alumno->sexo }}</td>
                 <td>{{ $alumno->carrera }}</td>
+                <td>
+                    <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    @else
+    <p>No hay alumnos registrados.</p>
+    @endif
 </body>
 </html>
