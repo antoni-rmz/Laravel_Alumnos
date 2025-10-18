@@ -8,7 +8,10 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 
 class Alumnos extends Model
 {
+    //impementacion de factory para el modelo Alumnos
+    //y asi poder crear datos de prueba facilmente
     use HasFactory;
+    
     protected $table = 'alumnos';
     protected $fillable = [
         'nombre',
