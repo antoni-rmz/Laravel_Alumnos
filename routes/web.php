@@ -12,9 +12,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+//Rutas para crear y ver alumnos
 Route::get('/alumnos/create', [AlumnosController::class, 'create'])->name('alumnos.create');
 Route::get('/alumnos', [AlumnosController::class, 'index'])->name('alumnos.index');
 Route::post('/alumnos', [AlumnosController::class, 'store'])->name('alumnos.store');
+//Rutas para la edición de alumnos
+Route::get('/alumnos/{alumnos}/edit', [AlumnosController::class, 'edit'])->name('alumnos.edit');
+Route::put('/alumnos/{alumnos}', [AlumnosController::class, 'update'])->name('alumnos.update');
+//Ruta para eliminar un alumno
 Route::delete('/alumnos/{alumnos}', [AlumnosController::class, 'destroy'])->name('alumnos.destroy');
 
 Route::view('dashboard', 'dashboard')

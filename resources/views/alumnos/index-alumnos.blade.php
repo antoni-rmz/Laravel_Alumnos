@@ -30,7 +30,14 @@
                 <td>{{ $alumno->sexo }}</td>
                 <td>{{ $alumno->carrera }}</td>
                 <td>
-                    <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="post">
+                    <form action="{{ route('alumnos.edit', $alumno->id) }}" method="POST">
+                        @csrf
+                        @method('GET')
+                        <button type="submit">Editar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Eliminar</button>
