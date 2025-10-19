@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumnos;
 use Illuminate\Http\Request;
-use App\Htpp\Request\StoreAlumnosRequest;
 
 class AlumnosController extends Controller
 {
@@ -31,6 +30,7 @@ class AlumnosController extends Controller
     public function store(Request $request)
     {
         $alumno = new Alumnos();
+        $alumno->codigo = $request->input('codigo');
         $alumno->nombre = $request->input('nombre');
         $alumno->correo = $request->input('correo');
         $alumno->fecha_nacimiento = $request->input('fecha_nacimiento');
@@ -66,6 +66,7 @@ class AlumnosController extends Controller
     {
         //Funcion para actualizar un alumno
         $alumno = Alumnos::findOrfail($alumnos->id);
+        $alumno->codigo = $request->input('codigo');
         $alumno->nombre = $request->input('nombre');
         $alumno->correo = $request->input('correo');
         $alumno->fecha_nacimiento = $request->input('fecha_nacimiento');

@@ -11,9 +11,10 @@ class Alumnos extends Model
     //impementacion de factory para el modelo Alumnos
     //y asi poder crear datos de prueba facilmente
     use HasFactory;
-    
+
     protected $table = 'alumnos';
     protected $fillable = [
+        'codigo',
         'nombre',
         'correo',
         'fecha_nacimiento',

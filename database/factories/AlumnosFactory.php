@@ -18,6 +18,7 @@ class AlumnosFactory extends Factory
     {
         return [
             //Se definen los campos de la tabla alumnos falsos para pruebas
+            'codigo' => $this->faker->unique()->numberBetween(100000, 999999),
             'nombre' => $this->faker->name(),
             'correo' => $this->faker->unique()->safeEmail(),
             'fecha_nacimiento' => $this->faker->date(),

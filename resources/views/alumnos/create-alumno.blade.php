@@ -10,7 +10,7 @@
     <form action="/alumnos" method="POST">
         @csrf
         <label for="codigo">Codigo: </label>
-        <input type="text" id="codigo" name="codigo" require>
+        <input type="number" id="codigo" name="codigo" require>
         <br>
         <label for="nombre">Nombre: </label>
         <input type="text" id="nombre" name="nombre" require>
