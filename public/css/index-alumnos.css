@@ -1,0 +1,123 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 950px;
+    margin: 20px auto;
+    background-color: #4a5568;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+h1 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff !important;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-align: center;
+    font-family: inherit;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-crear {
+    background-color: #27ae60;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.btn-mostrar {
+    background-color: #3498db;
+}
+
+.btn-editar {
+    background-color: #f39c12;
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 6px;
+    border: 1px solid #5a6578;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #5a6578;
+    vertical-align: middle;
+}
+
+thead th {
+    background-color: #3a4454;
+    color: #cbd5e0; 
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #424d5e;
+}
+
+tbody tr:hover {
+    background-color: #5a6578;
+}
+
+.accion-celda {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.accion-celda form {
+    margin: 0;
+    display: inline-block;
+}
+
+.accion-celda .btn {
+    margin: 0 3px;
+    min-width: 80px;
+    box-sizing: border-box;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1em;
+    color: #9fb1c2;
+}}
