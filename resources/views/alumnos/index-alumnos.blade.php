@@ -14,10 +14,9 @@
             <tr>
                 <th>Codigo</th>
                 <th>Nombre</th>
-                <th>Correo</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Sexo</th>
-                <th>Carrera</th>
+                <td>Datos del alumno</td>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -25,17 +24,15 @@
             <tr>
                 <td>{{ $alumno->codigo }}</td>
                 <td>{{ $alumno->nombre }}</td>
-                <td>{{ $alumno->correo }}</td>
-                <td>{{ $alumno->fecha_nacimiento }}</td>
-                <td>{{ $alumno->sexo }}</td>
-                <td>{{ $alumno->carrera }}</td>
                 <td>
-                    <form action="{{ route('alumnos.edit', $alumno->id) }}" method="POST">
-                        @csrf
-                        @method('GET')
-                        <button type="submit">Editar</button>
-                    </form>
+                    <a href="{{ route('alumnos.show', $alumno->id) }}">
+                        <button type="submit">Ver detalles</button>
+                    </a>
                 </td>
+                <td>
+                    <a href="{{ route('alumnos.edit', $alumno) }}">
+                        <button type="submit">Editar</button>
+                    </a>
                 <td>
                     <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST">
                         @csrf

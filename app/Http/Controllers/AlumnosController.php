@@ -44,28 +44,27 @@ class AlumnosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Alumnos $alumnos)
+    public function show(Alumnos $alumno)
     {
-        //
+        return view('alumnos.mostrar-alumno', compact('alumno'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Alumnos $alumnos)
+    public function edit(Alumnos $alumno)
     {
         //Funcion para editar un alumno
-        $alumno = Alumnos::findOrfail($alumnos->id);
+        $alumno = Alumnos::findOrfail($alumno->id);
         return view('alumnos.editar-alumno', compact('alumno'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Alumnos $alumnos)
+    public function update(Request $request, Alumnos $alumno)
     {
         //Funcion para actualizar un alumno
-        $alumno = Alumnos::findOrfail($alumnos->id);
         $alumno->codigo = $request->input('codigo');
         $alumno->nombre = $request->input('nombre');
         $alumno->correo = $request->input('correo');
@@ -79,9 +78,9 @@ class AlumnosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Alumnos $alumnos)
+    public function destroy(Alumnos $alumno)
     {
-        $alumnos->delete();
+        $alumno->delete();
         return redirect()->route('alumnos.index');
     }
 }
