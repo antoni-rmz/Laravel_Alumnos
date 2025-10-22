@@ -17,6 +17,10 @@ class AlumnosTest extends TestCase
     {
         //Usamos factory para crear un alumno
         $datosAlumno = Alumnos::factory()->make();
+
+        //Sexo aleatorio entre las opciones permitidas
+        $opcionesSexo = ['masculino', 'femenino' ,'prefiero_no_decirlo'];
+        $datosAlumno['sexo'] = $opcionesSexo[array_rand($opcionesSexo)];
         
         //guardamos el alumno usando la ruta correspondiente
         $response = $this->post(route('alumnos.store'), $datosAlumno->toArray());
@@ -55,10 +59,13 @@ class AlumnosTest extends TestCase
         //Datos actualizados
         $datosActualizados = Alumnos::factory()->make()->toArray();
 
+        //Sexo aleatorio entre las opciones permitidas actualizado
+        $datosActualizados['sexo'] = $opcionesSexo[array_rand($opcionesSexo)];
+
         //Actualizamos el alumno
         $response = $this->put(route('alumnos.update', ['alumno'=>$alumno->id]), $datosActualizados);
         $response->assertRedirect(route('alumnos.index'));
-
+        
         //Comprobamos que los datos se han actualizado
         $this->assertDatabaseHas('alumnos', [
             'codigo' => $datosActualizados['codigo'],

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumnos;
 use Illuminate\Http\Request;
+use App\Http\Requests\AlumnosRequest;
+use App\Http\Requests\EditarAlumnosRequest;
 
 class AlumnosController extends Controller
 {
@@ -27,16 +29,10 @@ class AlumnosController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AlumnosRequest $request)
     {
-        $alumno = new Alumnos();
-        $alumno->codigo = $request->input('codigo');
-        $alumno->nombre = $request->input('nombre');
-        $alumno->correo = $request->input('correo');
-        $alumno->fecha_nacimiento = $request->input('fecha_nacimiento');
-        $alumno->sexo = $request->input('sexo');
-        $alumno->carrera = $request->input('carrera');
-        $alumno->save();
+        $validatedData = $request->validated();
+        Alumnos::create($validatedData);
 
         return redirect()->route('alumnos.index');
     }
@@ -62,16 +58,10 @@ class AlumnosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Alumnos $alumno)
+    public function update(EditarAlumnosRequest $request, Alumnos $alumno)
     {
-        //Funcion para actualizar un alumno
-        $alumno->codigo = $request->input('codigo');
-        $alumno->nombre = $request->input('nombre');
-        $alumno->correo = $request->input('correo');
-        $alumno->fecha_nacimiento = $request->input('fecha_nacimiento');
-        $alumno->sexo = $request->input('sexo');
-        $alumno->carrera = $request->input('carrera');
-        $alumno->save();
+        $validatedData = $request->validated();
+        $alumno->update($validatedData);
         return redirect()->route('alumnos.index');
     }
 
