@@ -12,17 +12,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-//Rutas para crear y listar alumnos
-Route::get('/alumnos/create', [AlumnosController::class, 'create'])->name('alumnos.create');
-Route::get('/alumnos', [AlumnosController::class, 'index'])->name('alumnos.index');
-Route::post('/alumnos', [AlumnosController::class, 'store'])->name('alumnos.store');
-//Ruta para mostrar un alumno
-Route::get('/alumnos/{alumno}', [AlumnosController::class, 'show'])->name('alumnos.show');
-//Rutas para la edición de alumnos
-Route::get('/alumnos/{alumno}/edit', [AlumnosController::class, 'edit'])->name('alumnos.edit');
-Route::put('/alumnos/{alumno}', [AlumnosController::class, 'update'])->name('alumnos.update');
-//Ruta para eliminar un alumno
-Route::delete('/alumnos/{alumno}', [AlumnosController::class, 'destroy'])->name('alumnos.destroy');
+//Ruta para utilizar los metodos de los alumnos
+Route::resource('alumnos', AlumnosController::class);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
