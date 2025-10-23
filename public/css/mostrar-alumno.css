@@ -1,7 +1,11 @@
+/* --- Estilo "Vintage Oscuro" (Sepia/Marrón) --- */
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    /* Fondo de página: un marrón muy oscuro */
+    background-color: #28231e;
+    /* Color de texto: un tono crema/hueso */
+    color: #e6e0d4;
     margin: 0;
     padding: 20px;
 }
@@ -9,19 +13,22 @@ body {
 .container {
     max-width: 800px; 
     margin: 30px auto;
-    background-color: #ffffff;
+    /* Fondo del contenedor: un marrón más claro */
+    background-color: #3a332a;
     padding: 35px 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Borde: un tono marrón medio */
+    border: 1px solid #50483e;
 }
 
 h1 {
-    color: #2c3e50;
+    /* Título: un crema más brillante */
+    color: #f5f0e8;
     margin-top: 0;
     margin-bottom: 25px;
     text-align: center;
-    border-bottom: 2px solid #ecf0f1;
+    border-bottom: 2px solid #50483e;
     padding-bottom: 20px;
 }
 
@@ -34,7 +41,8 @@ h1 {
     align-items: baseline;
     font-size: 1.1rem;
     padding: 18px 0;
-    border-bottom: 1px dashed #e0e0e0;
+    /* Borde punteado en tono marrón medio */
+    border-bottom: 1px dashed #50483e;
 }
 
 .detail-item:last-child {
@@ -43,23 +51,25 @@ h1 {
 
 .detail-label {
     font-weight: 600;
-    color: #5a6578;
+    /* Etiqueta: un color oro/tan desaturado */
+    color: #bfae90;
     min-width: 200px;
     flex-shrink: 0;
 }
 
 .detail-data {
-    color: #2d3748;
+    color: #e6e0d4; /* Color del dato (texto principal) */
     word-break: break-all;
 }
 
 .actions {
     margin-top: 30px;
     padding-top: 25px;
-    border-top: 2px solid #ecf0f1;
+    border-top: 2px solid #50483e;
     text-align: left;
 }
 
+/* --- Botones --- */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -85,9 +95,11 @@ h1 {
 }
 
 .btn-editar {
+    /* El naranja original se ve excelente con este tema */
     background-color: #f39c12;
 }
 
 .btn-secondary {
-    background-color: #7f8c8d;
+    /* Un gris-marrón cálido que combina */
+    background-color: #8a7967;
 }

@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Alumnos</title>
+@extends('layouts.vistas-web')
+
+@section('title', 'Lista de Alumnos')
+
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/index-alumnos.css') }}">
-</head>
-<body>
-    
+@endpush
+
+@section('content')
     <div class="container">
         <h1>Lista de Alumnos</h1>
         
@@ -43,7 +42,7 @@
                             </td>
                             
                             <td class="accion-celda">
-                                <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST">
+                                <form action="{{ route('alumnos.destroy', $alumno->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este alumno?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-eliminar">Eliminar</button>
@@ -57,5 +56,5 @@
         @else
             <p class="no-data">No hay alumnos registrados.</p>
         @endif
-    </div> </body>
-</html>
+    </div>
+@endsection

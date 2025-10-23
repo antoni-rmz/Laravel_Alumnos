@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de {{ $alumno->nombre }}</title>
-    <link rel="stylesheet" href="{{ asset('css/mostrar-alumno.css') }}">
-</head>
-<body>
+@extends('layouts.vistas-web')
 
+@section('title', 'Detalles de '. $alumno->nombre)
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/mostrar-alumno.css') }}">
+@endpush
+
+@section('content')
     <div class="container">
         <h1>Detalles del Alumno</h1>
 
@@ -52,5 +51,4 @@
             </a>
         </div>
     </div>
-</body>
-</html>
+@endsection

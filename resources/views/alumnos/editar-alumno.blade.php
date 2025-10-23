@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Alumno</title>
-    <link rel="stylesheet" href="{{ asset('css/editar-alumno.css') }}">
-</head>
-<body>
+@extends('layouts.vistas-web')
 
+@section('title', 'Editar Alumno')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/editar-alumno.css') }}">
+@endpush
+
+@section('content')
     <div class="container">
         <h1>Editar Alumno</h1>
         
@@ -75,5 +74,4 @@
             
         </form>
     </div>
-</body>
-</html>
+@endsection
